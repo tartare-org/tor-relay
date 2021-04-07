@@ -1,0 +1,9 @@
+SocksPort 0
+ORPort 9001
+Nickname PoopPoopPoop
+ContactInfo nobody(at)nowhere(dot)local
+DirPort 9030
+ExitRelay 0
+RelayBandwidthRate 6 MBits
+RelayBandwidthBurst 8 MBits
+ControlPort 9051
