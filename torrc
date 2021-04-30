@@ -1,6 +1,6 @@
 SocksPort 0
 ORPort 9001
-Nickname PoopPoopPoop
+Nickname SomeoneDidntLookAtTheConfig
 ContactInfo nobody(at)nowhere(dot)local
 DirPort 9030
 ExitRelay 0
