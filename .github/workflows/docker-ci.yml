@@ -16,8 +16,8 @@ jobs:
         docker login -u  ${{ secrets.DOCKER_HUB_USER }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
     - name: building
       run: |
-        docker build . --compress --tag tartare/tor-relay:master
+        make build
     - name: pushing
       run: |
-        docker push tartare/tor-relay:master
+        make push
 

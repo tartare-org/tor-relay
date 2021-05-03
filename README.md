@@ -3,25 +3,17 @@
 
 Build the image:
 ```
-$ docker build -t local/tor .
+$ make build
 ```
 
 Forward port 9001 to the host system
 
 Run the image:
 ```
-$ docker run -d --init --name=tor-1 -e TOR_NICKNAME=MyNickname -v data:/var/lib/tor --restart=always -p :9001:9001 -t local/tor
+$ docker run -d --init --name=tor-1 -v data:/var/lib/tor -v torrc: /etc/tor/torrc --restart=always -p :9001:9001 -t tartare/tor-relay
 ```
 
 Monitor the logs to make sure the node bootstraps:
 ```
 $ docker logs -f tor-1
-```
-
-If we need to upgade the node (ie theres a new tor release on ubuntu 21.04), run something like:
-```
-$ docker build --no-cache -t local/tor .
-$ docker stop tor-1
-$ docker container rm tor-1
-$ docker run -d --init --name=tor-1 -e TOR_NICKNAME=MyNickname -v data:/var/lib/tor --restart=always -p :9001:9001 -t local/tor
 ```
